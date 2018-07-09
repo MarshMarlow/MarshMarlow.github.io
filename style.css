@@ -1,26 +1,30 @@
+body{
+    background-color: black;
+    color:#FFF;
+}
 .button {
-    background-color: #FFFFFF;
+    background-color: black;
     border: 2px solid #4CAF50;
     color: #4CAF50;
     padding: 15px 36px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 24px;
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
 .button:hover {
     background-color: #4CAF50;
-    color:white;
+    color:black;
 }
 .button:active {
-    background-color: white;
+    background-color: black;
     color: #4CAF50;
 }
 
 .autobutton {
-    background-color: #FFFFFF;
+    background-color: black;
     border: 2px solid #f20e0e;
     color: #f20e0e;
     padding: 15px 36px;
@@ -33,14 +37,14 @@
 }
 .autobutton:hover {
     background-color: #f20e0e;
-    color:white;
+    color:black;
 }
 .autobutton:active {
-    background-color: white;
+    background-color: black;
     color: #f20e0e
 }
 .clickbutton {
-    background-color: #FFFFFF;
+    background-color: black;
     border: 2px solid #4286f4;
     color: #4286f4;
     padding: 15px 36px;
@@ -53,15 +57,36 @@
 }
 .clickbutton:hover {
     background-color: #4286f4;
-    color:white;
+    color:black;
 }
 .clickbutton:active {
-    background-color: white;
+    background-color: black;
     color: #4286f4;
 }
 
+.coolbutton {
+    background-color: black;
+    border: 2px solid #3cf88b;
+    color: #3cf88b;
+    padding: 15px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s; 
+}
+.coolbutton:hover {
+    background-color: #3cf88b;
+    color:black;
+}
+.coolbutton:active {
+    background-color: black;
+    color: #3cf88b;
+}
+
 .megabutton {
-    background-color: #FFFFFF;
+    background-color: black;
     border: 2px solid #f4d942;
     color: #f4d942;
     padding: 15px 36px;
@@ -74,15 +99,15 @@
 }
 .megabutton:hover {
     background-color: #f4d942;
-    color:white;
+    color:black;
 }
 .megabutton:active {
-    background-color: white;
+    background-color: black;
     color: #f4d942;
 }
 
 .ultrabutton {
-    background-color: #FFFFFF;
+    background-color: black;
     border: 2px solid #f10b91;
     color: #f10b91;
     padding: 15px 36px;
@@ -95,9 +120,91 @@
 }
 .ultrabutton:hover {
     background-color: #f10b91;
-    color:white;
+    color:black;
 }
 .ultrabutton:active {
-    background-color: white;
+    background-color: black;
     color: #f10b91;
+}
+.cool2button {
+    background-color: black;
+    border: 2px solid #ee5151;
+    color: #ee5151;
+    padding: 15px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s; 
+}
+.cool2button:hover {
+    background-color: #ee5151;
+    color:black;
+}
+.cool2button:active {
+    background-color: black;
+    color: #ee5151;
+}
+.gigabutton {
+    background-color: black;
+    border: 2px solid #3d0bf1;
+    color: #3d0bf1;
+    padding: 15px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s; 
+}
+.gigabutton:hover {
+    background-color: #3d0bf1;
+    color:black;
+}
+.gigabutton:active {
+    background-color: black;
+    color: #3d0bf1;
+}
+
+.legendbutton {
+    background-color: black;
+    border: 2px solid #00ffd5;
+    color: #00ffd5;
+    padding: 15px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s; 
+}
+.legendbutton:hover {
+    background-color: #00ffd5;
+    color:black;
+}
+.legendbutton:active {
+    background-color: black;
+    color: #00ffd5;
+}
+
+.addbutton {
+    background-color: black;
+    border: 2px solid #16832e;
+    color: #16832e;
+    padding: 15px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s; 
+}
+.addbutton:hover {
+    background-color: #16832e;
+    color:black;
+}
+.addbutton:active {
+    background-color: black;
+    color: #16832e;
 }

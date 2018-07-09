@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h2>Ultimate Clicker!</h2>
 <p style="font-size:32px", id = "money"></p>
 <p style="font-size:16px", id = "autos"></p>
 <p style="font-size:16px", id = "sclick"></p>
+<p style="font-size:16px", id = "autoc"></p>
 
 <button class="button", onclick ="clicker()">$$$</button>
 
 <button class="autobutton", onclick ="auto()", style="position:fixed; right:50%;top:10%">Buy Auto-Cash ($100)</button>
 <button class="clickbutton", onclick="superclick()", style="position:fixed; right:50%; top:40%">Buy Super Click ($250)</button>
+<button class="coolbutton", onclick="cool()", style="position:fixed; right:50%; top:70%">Buy 2nd Auto-Counter<br>($1000)</button>
 <button class="megabutton", onclick ="mega()", style="position:fixed; right:30%; top:10%">Buy Mega-Cash ($1500)<br>(Requires MAX Auto-Cash) </button>
 <button class="ultrabutton", onclick ="ultra()", style="position:fixed; right:30%; top:40%">Buy Ultra Click ($5000)<br>(Requires MAX Super Click) </button>
+<button class="cool2button", onclick="cool2()", style="position:fixed; right:29%; top:70%">Buy 3rd Auto-Counter ($20000)<br>(Requires 2nd Auto-Counter)</button>
+<button class="gigabutton", onclick ="giga()", style="position:fixed; right:10%; top:10%">Buy Giga-Cash ($50000)<br>(Requires MAX Mega-Cash) </button>
+<button class="legendbutton", onclick ="legend()", style="position:fixed; right:10%; top:40%">Buy Legendary Click ($100000)<br>(Requires MAX Ultra Click) </button>
+<button class="addbutton", onclick="add()", style="position:fixed; right:10%; top:70%">Buy Auto-Counter ($100000)<br>(Requires 3rd Auto-Counter)</button>
 
 
 <script>
@@ -25,17 +32,18 @@ var mySound = new sound("explode_11.mp3");
         money = `$${dollars}`
         document.getElementById("money").innerHTML = money;
     }
-    var dollars = 0;
+    var dollars = 100000;
     var money = "$0";
     var autos = 0;
     var sclick = 0;
+    var autoCount = 1;
 function clicker() {
     dollars+= sclick + 1;
     moneyThing();
     mySound.play();
 }
 function auto(){
-    if(dollars >= 100 && autos !== 10) {
+    if(dollars >= 100 && autos < 10) {
         autos++;
         dollars -= 100;
         moneyThing();
@@ -47,7 +55,7 @@ function auto(){
     }
 }
 function superclick() {
-    if(dollars >= 250 && sclick !== 10) {
+    if(dollars >= 250 && sclick < 10) {
         sclick++;
         dollars -= 250;
         moneyThing();
@@ -58,8 +66,17 @@ function superclick() {
         }
     } 
 }
+function cool(){
+    if(dollars >= 1000 && autoCount == 1) {
+        autoCount++;
+        dollars -= 1000;
+        moneyThing();
+        setInterval(autoGenerate,700);
+        document.getElementById("autoc").innerHTML = `Auto-Count: ${autoCount}`;
+    }
+}
 function mega(){
-    if(dollars >= 1500 && autos !== 160 && autos >= 10) {
+    if(dollars >= 1500 && autos < 160 && autos >= 10) {
         autos += 15;
         dollars -= 1500;
         moneyThing();
@@ -71,7 +88,7 @@ function mega(){
     }
 }
 function ultra() {
-    if(dollars >= 5000 && sclick !== 100 && sclick >= 10) {
+    if(dollars >= 5000 && sclick < 100 && sclick >= 10) {
         sclick += 10;
         dollars -= 5000;
         moneyThing();
@@ -82,12 +99,46 @@ function ultra() {
         }
     } 
 }
+function cool2(){
+    if(dollars >= 20000 && autoCount == 2) {
+        autoCount++;
+        dollars -= 20000;
+        moneyThing();
+        setInterval(autoGenerate,550);
+        document.getElementById("autoc").innerHTML = `Auto-Count: ${autoCount}`;
+    }
+}
+function giga(){
+    if(dollars >= 50000 && autos >= 160) {
+        if(autos == 160) {autos += 240;} else{autos += 200;}
+        dollars -= 50000;
+        moneyThing();
+            document.getElementById("autos").innerHTML = `Giga-Cash: ${autos}`;
+    }
+}
+function legend() {
+    if(dollars >= 100000 && sclick >= 100) {
+        sclick += 100;
+        dollars -= 100000;
+        moneyThing();
+            document.getElementById("sclick").innerHTML = `Ultra Clicks: ${sclick}`;
+    } 
+}
+function add(){
+    if(dollars >= 100000 && autoCount >= 3) {
+        autoCount++;
+        dollars -= 100000;
+        moneyThing();
+        setInterval(autoGenerate,247);
+        document.getElementById("autoc").innerHTML = `Auto-Count: ${autoCount}`;
+    }
+}
 function autoGenerate() {
         dollars+= autos;
         moneyThing();
 }
 
-    setInterval(autoGenerate,1000);
+setInterval(autoGenerate,1000);
 
 
     document.getElementById("money").innerHTML = money;

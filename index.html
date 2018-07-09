@@ -2,18 +2,22 @@
 <html>
 <head>
     <title>
-        hi
+        minecraft
     </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p1 id = "money"></p1>
-<p2 id = "autos"></p2>
+<p style="font-size:32px", id = "money"></p>
+<p style="font-size:16px", id = "autos"></p>
 
-<button class="button", onclick ="clicker()", style="position:fixed; top:10%;">$$$</button>
+<button class="button", onclick ="clicker()">$$$</button>
 <button class="autobutton", onclick ="auto()", style="position:fixed; right:50%;">Buy Auto-Cash ($100)</button>
+<button class="clickbutton", onclick="superclick()", style="position:fixed; right:50%; top:30%">Buy Super Click ($250)</button>
 
 <script>
+//yo
+var mySound = new sound("explode_11.mp3");
+//yo
     function moneyThing() {
         money = `$${dollars}`
         document.getElementById("money").innerHTML = money;
@@ -24,6 +28,7 @@
 function clicker() {
     dollars++;
     moneyThing();
+    mySound.play();
 }
 function auto(){
     if(dollars >= 100) {
@@ -43,6 +48,22 @@ function autoGenerate() {
 
     document.getElementById("money").innerHTML = money;
 
+//stuff
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}
+//stuff
 </script>
 
 </body>

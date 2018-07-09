@@ -9,15 +9,16 @@
 <body>
 <p style="font-size:32px", id = "money"></p>
 <p style="font-size:16px", id = "autos"></p>
+<p style="font-size:16px", id = "sclick"></p>
 
 <button class="button", onclick ="clicker()">$$$</button>
+
 <button class="autobutton", onclick ="auto()", style="position:fixed; right:50%;">Buy Auto-Cash ($100)</button>
-<button class="clickbutton", onclick="superclick()", style="position:fixed; right:50%; top:30%">Buy Super Click ($250)</button>
+<button class="clickbutton", onclick="superclick()", style="position:fixed; right:50%; top:40%">Buy Super Click ($250)</button>
+<button class="megabutton", onclick ="mega()", style="position:fixed; right:50%; top:70%">Buy Mega-Cash ($2000)</button>
 
 <script>
-//yo
 var mySound = new sound("explode_11.mp3");
-//yo
     function moneyThing() {
         money = `$${dollars}`
         document.getElementById("money").innerHTML = money;
@@ -25,17 +26,46 @@ var mySound = new sound("explode_11.mp3");
     var dollars = 0;
     var money = "$0";
     var autos = 0;
+    var sclick = 0;
 function clicker() {
-    dollars++;
+    dollars+= sclick + 1;
     moneyThing();
     mySound.play();
 }
 function auto(){
-    if(dollars >= 100) {
+    if(dollars >= 100 && autos !== 10) {
         autos++;
         dollars -= 100;
         moneyThing();
-        document.getElementById("autos").innerHTML = `Auto-Cash: ${autos}`;
+        if(autos == 10) {
+        document.getElementById("autos").innerHTML = `Auto-Cash: MAX`;
+        } else {
+            document.getElementById("autos").innerHTML = `Auto-Cash: ${autos}`;
+        }
+    }
+}
+function superclick() {
+    if(dollars >= 250 && sclick !== 10) {
+        sclick++;
+        dollars -= 250;
+        moneyThing();
+        if(sclick == 10) {
+            document.getElementById("sclick").innerHTML = `Super Clicks: MAX`;
+        } else {
+            document.getElementById("sclick").innerHTML = `Super Clicks: ${sclick}`;
+        }
+    } 
+}
+function mega(){
+    if(dollars >= 2000 && autos !== 160) {
+        autos += 15;
+        dollars -= 2000;
+        moneyThing();
+        if(autos == 160) {
+        document.getElementById("autos").innerHTML = `Mega-Cash: MAX`;
+        } else {
+            document.getElementById("autos").innerHTML = `Mega-Cash: ${autos}`;
+        }
     }
 }
 function autoGenerate() {
@@ -48,7 +78,7 @@ function autoGenerate() {
 
     document.getElementById("money").innerHTML = money;
 
-//stuff
+
 function sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
@@ -63,7 +93,7 @@ function sound(src) {
         this.sound.pause();
     }    
 }
-//stuff
+
 </script>
 
 </body>

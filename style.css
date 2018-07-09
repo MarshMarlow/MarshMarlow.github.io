@@ -39,3 +39,44 @@
     background-color: white;
     color: #f20e0e
 }
+.clickbutton {
+    background-color: #FFFFFF;
+    border: 2px solid #4286f4;
+    color: #4286f4;
+    padding: 15px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s; 
+}
+.clickbutton:hover {
+    background-color: #4286f4;
+    color:white;
+}
+.clickbutton:active {
+    background-color: white;
+    color: #4286f4;
+}
+
+.megabutton {
+    background-color: #FFFFFF;
+    border: 2px solid #f4d942;
+    color: #f4d942;
+    padding: 15px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s; 
+}
+.megabutton:hover {
+    background-color: #f4d942;
+    color:white;
+}
+.megabutton:active {
+    background-color: white;
+    color: #f4d942;
+}

@@ -13,9 +13,11 @@
 
 <button class="button", onclick ="clicker()">$$$</button>
 
-<button class="autobutton", onclick ="auto()", style="position:fixed; right:50%;">Buy Auto-Cash ($100)</button>
+<button class="autobutton", onclick ="auto()", style="position:fixed; right:50%;top:10%">Buy Auto-Cash ($100)</button>
 <button class="clickbutton", onclick="superclick()", style="position:fixed; right:50%; top:40%">Buy Super Click ($250)</button>
-<button class="megabutton", onclick ="mega()", style="position:fixed; right:50%; top:70%">Buy Mega-Cash ($2000)</button>
+<button class="megabutton", onclick ="mega()", style="position:fixed; right:30%; top:10%">Buy Mega-Cash ($1500)<br>(Requires MAX Auto-Cash) </button>
+<button class="ultrabutton", onclick ="ultra()", style="position:fixed; right:30%; top:40%">Buy Ultra Click ($5000)<br>(Requires MAX Super Click) </button>
+
 
 <script>
 var mySound = new sound("explode_11.mp3");
@@ -57,9 +59,9 @@ function superclick() {
     } 
 }
 function mega(){
-    if(dollars >= 2000 && autos !== 160) {
+    if(dollars >= 1500 && autos !== 160 && autos >= 10) {
         autos += 15;
-        dollars -= 2000;
+        dollars -= 1500;
         moneyThing();
         if(autos == 160) {
         document.getElementById("autos").innerHTML = `Mega-Cash: MAX`;
@@ -67,6 +69,18 @@ function mega(){
             document.getElementById("autos").innerHTML = `Mega-Cash: ${autos}`;
         }
     }
+}
+function ultra() {
+    if(dollars >= 5000 && sclick !== 100 && sclick >= 10) {
+        sclick += 10;
+        dollars -= 5000;
+        moneyThing();
+        if(sclick == 100) {
+            document.getElementById("sclick").innerHTML = `Ultra Clicks: MAX`;
+        } else {
+            document.getElementById("sclick").innerHTML = `Ultra Clicks: ${sclick}`;
+        }
+    } 
 }
 function autoGenerate() {
         dollars+= autos;

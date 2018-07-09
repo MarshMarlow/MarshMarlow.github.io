@@ -80,3 +80,24 @@
     background-color: white;
     color: #f4d942;
 }
+
+.ultrabutton {
+    background-color: #FFFFFF;
+    border: 2px solid #f10b91;
+    color: #f10b91;
+    padding: 15px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s; 
+}
+.ultrabutton:hover {
+    background-color: #f10b91;
+    color:white;
+}
+.ultrabutton:active {
+    background-color: white;
+    color: #f10b91;
+}

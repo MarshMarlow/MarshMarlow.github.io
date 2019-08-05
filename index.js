@@ -83,7 +83,7 @@ class enemy {
                 this.hp -= player.damage;
                 bullets[i].die=true;
                 if(this.hp <= 0) {
-                    player.xp += Math.floor(this.size/5)*10;
+                    player.xp += Math.floor(this.size/5);
                     return true;
                 }
             }

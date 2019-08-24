@@ -10,8 +10,8 @@ images = [
 
 audio = [
     "sounds/",
-    "jump1.wav",
-    "jump2.wav",
+    "j1.wav",
+    "j2.wav",
     "walk1.wav",
     "walk2.wav",
     "land.wav",
@@ -160,7 +160,7 @@ function update() {
                 player.v2.x = ((b.x2-b.x1)/b.speed) * b.dir;
                 player.v.y += ((b.y2-b.y1)/b.speed) * b.dir;
             }
-            play(sounds[`jump${rand(1,2)}`]);
+            play(sounds[`j${rand(1,2)}`]);
         }
     
    
